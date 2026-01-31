@@ -27,7 +27,7 @@ public class AdminAttendanceActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         List<String> students = Arrays.asList(
-                "Aman", "Riya", "Sahil", "Neha"
+                "Aman", "Riya", "Sany", "Neha", "abc", "xyz", "zap", "abx", "afd", "daks", "fdad", "dss", "fda"
         );
 
         AdminAttendanceAdapter adapter =

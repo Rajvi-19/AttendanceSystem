@@ -15,14 +15,12 @@ public class AdminSemSelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_sem_selection);
 
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        nextBtn = findViewById(R.id.next_pg);
+        nextBtn.setOnClickListener(view -> {
 
-                // ** FORWARDING TO THE NEXT ATTENDANCE PAGE **
-                Intent intent = new Intent(AdminSemSelectionActivity.this,AdminAttendanceActivity.class);
-                startActivity(intent);
-            }
+            // ** FORWARDING TO THE NEXT ATTENDANCE PAGE **
+            Intent intent = new Intent(AdminSemSelectionActivity.this,AdminAttendanceActivity.class);
+            startActivity(intent);
         });
     }
 }

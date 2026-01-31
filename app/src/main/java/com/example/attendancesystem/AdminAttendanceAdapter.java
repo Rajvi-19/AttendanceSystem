@@ -1,12 +1,16 @@
 package com.example.attendancesystem;
 
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.HashMap;
@@ -18,6 +22,7 @@ public class AdminAttendanceAdapter
 
     List<String> students;
     Map<Integer, String> attendanceMap = new HashMap<>();
+    Button btnP, btnA, btnL;
 
     public AdminAttendanceAdapter(List<String> students) {
         this.students = students;
@@ -37,9 +42,47 @@ public class AdminAttendanceAdapter
     public void onBindViewHolder(ViewHolder h, int pos) {
         h.tvName.setText(students.get(pos));
 
-        h.btnP.setOnClickListener(v -> attendanceMap.put(pos, "P"));
-        h.btnA.setOnClickListener(v -> attendanceMap.put(pos, "A"));
-        h.btnL.setOnClickListener(v -> attendanceMap.put(pos, "L"));
+        h.btnP.setOnClickListener(v -> changeColor(v));
+        h.btnA.setOnClickListener(v -> changeColor(v));
+        h.btnL.setOnClickListener(v -> changeColor(v));
+    }
+
+
+    void changeColor(View view){
+
+        Drawable bg = view.getBackground();
+
+        // If already selected → unselect (turn gray)
+        if (view.getTag() != null && (boolean) view.getTag()) {
+            bg.setColorFilter(
+                    ContextCompat.getColor(view.getContext(), R.color.default_gray),
+                    PorterDuff.Mode.SRC_IN
+            );
+            view.setTag(false);
+            return;
+        }
+        // Change clicked button color
+        if (view.getId() == R.id.btnP) {
+            bg.setColorFilter(
+                    ContextCompat.getColor(view.getContext(), R.color.present_green),
+                    PorterDuff.Mode.SRC_IN
+            );// Green
+        }
+        else if (view.getId() == R.id.btnA) {
+            bg.setColorFilter(
+                    ContextCompat.getColor(view.getContext(), R.color.absent_red),
+                    PorterDuff.Mode.SRC_IN
+            );// Red
+        }
+        else if (view.getId() == R.id.btnL) {
+            bg.setColorFilter(
+                    ContextCompat.getColor(view.getContext(), R.color.late_orange),
+                    PorterDuff.Mode.SRC_IN
+            );// Orange
+        }
+
+        // Mark as selected
+        view.setTag(true);
     }
 
     @Override
@@ -57,6 +100,8 @@ public class AdminAttendanceAdapter
             btnP = itemView.findViewById(R.id.btnP);
             btnA = itemView.findViewById(R.id.btnA);
             btnL = itemView.findViewById(R.id.btnL);
+
+
         }
     }
 }
