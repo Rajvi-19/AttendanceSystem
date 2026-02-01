@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".AddAttendanceActivity">
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date and Time"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/round_square"
+        android:backgroundTint="@color/white"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"/>
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner"
+        android:layout_marginVertical="30dp"
+        android:layout_marginHorizontal="10dp"/>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:layout_gravity="center"
+    android:paddingHorizontal="10dp"
+    android:background="@drawable/round_corner">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Timing"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginEnd="30dp"/>
+
+    <Spinner
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:contentDescription="starting time hr"/>
+
+    <Spinner
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:contentDescription="starting time min" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=":"
+        android:textSize="35dp" />
+
+    <Spinner
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:contentDescription="ending time hr"/>
+
+    <Spinner
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:contentDescription="ending time min"/>
+
+</LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:text="Attendance"
+        android:textSize="22dp"
+        android:textColor="@color/white"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="16dp"
+        android:background="@drawable/round_square"
+        android:backgroundTint="#03D9C4"/>
+</LinearLayout>

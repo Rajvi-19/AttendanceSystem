@@ -12,25 +12,37 @@
         android:theme="@style/Theme.AttendanceSystem"
         tools:targetApi="31">
         <activity
-            android:name=".AdminAttendanceActivity"
+            android:name=".AddAttendanceActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminSemSelectionActivity"
+            android:name=".AllDaysAttendanceActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".StudentAttendanceActivity"
-            android:exported="false">
-        </activity>
+            android:name=".AdminAttendanceActivity"
+            android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".AdminSemSelectionActivity"
             android:exported="false">
 
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
+        <activity
+            android:name=".StudentAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

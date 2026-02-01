@@ -10,6 +10,6 @@
     <color name="present_green">#8BC34A</color>
     <color name="absent_red">#F43662</color>
     <color name="late_orange">#FFAA00</color>
-    <color name="default_gray">#535353</color>
+    <color name="default_gray">#797979</color>
 
 </resources>
