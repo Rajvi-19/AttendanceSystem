@@ -19,7 +19,7 @@ public class AdminSemSelectionActivity extends AppCompatActivity {
         nextBtn.setOnClickListener(view -> {
 
             // ** FORWARDING TO THE NEXT ATTENDANCE PAGE **
-            Intent intent = new Intent(AdminSemSelectionActivity.this,AdminAttendanceActivity.class);
+            Intent intent = new Intent(AdminSemSelectionActivity.this,AllDaysAttendanceActivity.class);
             startActivity(intent);
         });
     }

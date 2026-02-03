@@ -2,6 +2,7 @@ package com.example.attendancesystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -63,6 +64,8 @@ public class AddAttendanceActivity extends AppCompatActivity {
 
             Toast.makeText(this, timeSlot, Toast.LENGTH_SHORT).show();
 
+            goTOAdminAttendance();
+
             // Later: save this to DB / pass to RecyclerView
         });
 
@@ -98,6 +101,11 @@ public class AddAttendanceActivity extends AppCompatActivity {
 
         spStartMin.setAdapter(minAdapter);
         spEndMin.setAdapter(minAdapter);
+    }
+
+    private void goTOAdminAttendance(){
+        Intent intent = new Intent(AddAttendanceActivity.this, AddAttendanceActivity.class);
+        startActivity(intent);
     }
 
 

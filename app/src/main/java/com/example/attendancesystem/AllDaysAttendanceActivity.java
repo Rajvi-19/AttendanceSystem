@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -13,6 +17,8 @@ public class AllDaysAttendanceActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     AdminAttendanceHistoryAdapter adapter;
     ArrayList<AttendanceModel> list;
+    FloatingActionButton fab_addBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,16 @@ public class AllDaysAttendanceActivity extends AppCompatActivity {
         list = new ArrayList<>();
         adapter = new AdminAttendanceHistoryAdapter(list);
         recyclerView.setAdapter(adapter);
+
+        fab_addBtn = findViewById(R.id.fab_add);
+        fab_addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AllDaysAttendanceActivity.this, AddAttendanceActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         loadDummyData(); // for now
     }
