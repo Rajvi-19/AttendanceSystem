@@ -46,11 +46,13 @@
         android:layout_marginEnd="30dp"/>
 
     <Spinner
+        android:id="@+id/spStartHour"
         android:layout_width="60dp"
         android:layout_height="match_parent"
         android:contentDescription="starting time hr"/>
 
     <Spinner
+        android:id="@+id/spStartMin"
         android:layout_width="60dp"
         android:layout_height="match_parent"
         android:contentDescription="starting time min" />
@@ -62,11 +64,13 @@
         android:textSize="35dp" />
 
     <Spinner
+        android:id="@+id/spEndHour"
         android:layout_width="60dp"
         android:layout_height="match_parent"
         android:contentDescription="ending time hr"/>
 
     <Spinner
+        android:id="@+id/spEndMin"
         android:layout_width="60dp"
         android:layout_height="match_parent"
         android:contentDescription="ending time min"/>
@@ -74,6 +78,7 @@
 </LinearLayout>
 
     <Button
+        android:id="@+id/btnAttendance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
