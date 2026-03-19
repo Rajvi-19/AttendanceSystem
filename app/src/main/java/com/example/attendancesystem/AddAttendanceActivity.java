@@ -104,10 +104,8 @@ public class AddAttendanceActivity extends AppCompatActivity {
     }
 
     private void goTOAdminAttendance(){
-        Intent intent = new Intent(AddAttendanceActivity.this, AddAttendanceActivity.class);
+        Intent intent = new Intent(AddAttendanceActivity.this, AdminAttendanceActivity.class);
         startActivity(intent);
     }
-
-
 
 }

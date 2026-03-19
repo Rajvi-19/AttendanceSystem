@@ -30,20 +30,18 @@ public class AllDaysAttendanceActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
-        adapter = new AdminAttendanceHistoryAdapter(list);
+        loadDummyData();  // for now
+
+        adapter = new AdminAttendanceHistoryAdapter(this, list);
         recyclerView.setAdapter(adapter);
 
         fab_addBtn = findViewById(R.id.fab_add);
-        fab_addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AllDaysAttendanceActivity.this, AddAttendanceActivity.class);
-                startActivity(intent);
+        fab_addBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(AllDaysAttendanceActivity.this, AddAttendanceActivity.class);
+            startActivity(intent);
 
-            }
         });
 
-        loadDummyData(); // for now
     }
 
     private void loadDummyData() {

@@ -30,13 +30,18 @@ public class AdminAttendanceActivity extends AppCompatActivity {
                 "Aman", "Riya", "Sany", "Neha", "abc", "xyz", "zap", "abx", "afd", "daks", "fdad", "dss", "fda"
         );
 
-        AdminAttendanceAdapter adapter =
-                new AdminAttendanceAdapter(students);
-        recyclerView.setAdapter(adapter);
+//        AdminAttendanceAdapter adapter =
+//                new AdminAttendanceAdapter(students);
+//        recyclerView.setAdapter(adapter);
 
         btnSave.setOnClickListener(v -> {
             Toast.makeText(this,
                     "Attendance Saved", Toast.LENGTH_SHORT).show();
         });
+
+
+//        adapter.notifyDataSetChanged();
+
+
     }
 }
